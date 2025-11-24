@@ -62,7 +62,6 @@ public class TelaEscolherPet extends javax.swing.JFrame {
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(500, 400));
         setMinimumSize(new java.awt.Dimension(500, 400));
 
         Header.setBackground(new java.awt.Color(51, 51, 51));
@@ -85,11 +84,12 @@ public class TelaEscolherPet extends javax.swing.JFrame {
         Main.add(filler7);
 
         btnLumi.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        btnLumi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pomopet/resources/lumiLevel1.png"))); // NOI18N
         btnLumi.setText("Lumi");
         btnLumi.setAlignmentX(0.5F);
-        btnLumi.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnLumi.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnLumi.setPreferredSize(new java.awt.Dimension(100, 100));
+        btnLumi.setMaximumSize(new java.awt.Dimension(300, 300));
+        btnLumi.setMinimumSize(new java.awt.Dimension(300, 300));
+        btnLumi.setPreferredSize(new java.awt.Dimension(300, 300));
         btnLumi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLumiActionPerformed(evt);
@@ -99,11 +99,12 @@ public class TelaEscolherPet extends javax.swing.JFrame {
         Main.add(filler9);
 
         btnSabine.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        btnSabine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pomopet/resources/sabineLevel1.png"))); // NOI18N
         btnSabine.setText("Sabine");
         btnSabine.setAlignmentX(0.5F);
-        btnSabine.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnSabine.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnSabine.setPreferredSize(new java.awt.Dimension(100, 100));
+        btnSabine.setMaximumSize(new java.awt.Dimension(300, 300));
+        btnSabine.setMinimumSize(new java.awt.Dimension(300, 300));
+        btnSabine.setPreferredSize(new java.awt.Dimension(300, 300));
         btnSabine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSabineActionPerformed(evt);
@@ -113,11 +114,13 @@ public class TelaEscolherPet extends javax.swing.JFrame {
         Main.add(filler10);
 
         btnYami.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        btnYami.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/pomopet/resources/yamiLevel1.png"))); // NOI18N
         btnYami.setText("Yami");
         btnYami.setAlignmentX(0.5F);
-        btnYami.setMaximumSize(new java.awt.Dimension(100, 100));
-        btnYami.setMinimumSize(new java.awt.Dimension(100, 100));
-        btnYami.setPreferredSize(new java.awt.Dimension(100, 100));
+        btnYami.setMaximumSize(new java.awt.Dimension(300, 300));
+        btnYami.setMinimumSize(new java.awt.Dimension(300, 300));
+        btnYami.setName(""); // NOI18N
+        btnYami.setPreferredSize(new java.awt.Dimension(300, 300));
         btnYami.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnYamiActionPerformed(evt);
