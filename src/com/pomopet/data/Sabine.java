@@ -16,11 +16,11 @@ public class Sabine extends Pet{
     // Sobreposição Crescimento ->
     
     @Override
-    public void calculateGrow(int xp){
-        if(xp < 200){
+    public void calculateGrow(double xp){
+        if(xp < 200.0){
             super.setPetLevel(1);
             super.setImage("sabineLevel1.png");
-        }else if(xp < 500){
+        }else if(xp < 500.0){
             super.setPetLevel(2);
             super.setImage("sabineLevel2.png"); 
         }else{

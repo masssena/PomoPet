@@ -9,8 +9,9 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
-public class TelaPet extends javax.swing.JFrame {
-    
+
+
+public class TelaPet extends javax.swing.JFrame {  
     final String URL_DESTINO = "https://bit.ly/m/PomoPets";
     
     public TelaPet() {
@@ -22,8 +23,7 @@ public class TelaPet extends javax.swing.JFrame {
 // Método de Atualização Imagem ->
     public void atualizarExibicaoPet() {
         // Busca o Pet do usuário logado
-        
-        Pet pet = GerenciadorUsuario.getInstance().getUsuarioLogado().getStudentPet();  
+        Pet pet = GerenciadorUsuario.getInstance().getUsuarioLogado().getStudentPet();
         if (pet == null) {
             lblStatusPet.setText("Nenhum Pet Escolhido.");
             lblImagemPet.setIcon(null);
@@ -37,7 +37,7 @@ public class TelaPet extends javax.swing.JFrame {
         
         // Cálculo e Atualização da Barra de Progresso ->
         
-        int xpTotal = pet.getXp();
+        int xpTotal = (int)pet.getXp();
         int xpMarcoAtual = 0;
         int xpProximoMarco = 0;
 
@@ -49,7 +49,7 @@ public class TelaPet extends javax.swing.JFrame {
             xpProximoMarco = 500;
         } else {
             xpMarcoAtual = 500;
-            xpProximoMarco = 999999999;
+            xpProximoMarco = 99999;
         }
 
         int xpNoNivelAtual = xpTotal - xpMarcoAtual;
@@ -294,8 +294,8 @@ public class TelaPet extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnEvoluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvoluirActionPerformed
-        Pet pet = GerenciadorUsuario.getInstance().getUsuarioLogado().getStudentPet();
-        pet.addXp(100);
+
+        //pet.addXp(100);
         atualizarExibicaoPet();
     }//GEN-LAST:event_btnEvoluirActionPerformed
 
