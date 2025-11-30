@@ -11,16 +11,18 @@ public class Grupo implements Serializable {
     private static final long serialVersionUID = 1L;
     private String groupName;
     private boolean streak;
-    private int timeTarget;
+    private Meta meta = new Meta();
     private int membershipCount;
     private List<User> members;
-
+   
+    
 // Construtor ->
     
-    public Grupo(String groupName, int timeTarget,List<User> Membros) {
+ 
+    public Grupo(String groupName, int timeMeta, List<User> Membros) {
         this.groupName = groupName;
         this.streak = false;
-        this.timeTarget = timeTarget;
+        this.meta.setTempoTotal(timeMeta);
         this.members = new ArrayList<>();
         for (User membro : Membros) {
             this.members.add(membro);
@@ -47,14 +49,6 @@ public class Grupo implements Serializable {
         this.streak = streak;
     }
 
-    public int getTimeTarget() {
-        return timeTarget;
-    }
-
-    public void setTimeTarget(int timeTarget) {
-        this.timeTarget = timeTarget;
-    }
-
     public int getMembershipCount() {
         return membershipCount;
     }
@@ -71,10 +65,32 @@ public class Grupo implements Serializable {
         this.members = members;
     }
     
+    public int getTempoTotal() {
+        return this.meta.getTempoTotal();
+    }
+
+    public int getTempoRestante() {
+        return this.meta.getTempoRestante();
+    }
+
+    public void setTempoTotal(int tempoTotal) {
+        this.meta.setTempoTotal(tempoTotal);
+    }
+
+    public void setTempoRestante(int tempoRestante) {
+        this.meta.setTempoRestante(tempoRestante);
+    }
+    
+    public void contadorFinalizado (int segundosEstudados)
+    {
+        this.meta.setTempoRestante(this.meta.getTempoRestante() - segundosEstudados);
+        
+    }
+    
     //Sobreposição do toString() ->
     
     @Override
     public String toString() {
-        return groupName + " - " + members.size() + " Membros "  + " - Meta: " + timeTarget + " min/dia";
+        return groupName + " - " + members.size() + " Membros "  + " - Meta: " + (this.meta.getTempoTotal())/60 + " min/dia - " + this.meta.getTempoRestante()/60 + "min" + this.meta.getTempoRestante()%60 + "s restante";
     }
 }

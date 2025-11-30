@@ -10,19 +10,19 @@ public abstract class Pet implements Animal, Serializable {
     private final String name; 
     protected String image;
     protected int petLevel;
-    protected int xp;
+    protected double xp;
 
 // Construtor ->
     
     public Pet(String name) {
     this.name = name;
     this.petLevel = 1;    
-    this.xp = 0;      
+    this.xp = 0.0;      
     }
     
 // Método Adicionar XP ->
     
-    public void addXp(int xpGanho) {
+    public void addXp(double xpGanho) {
         this.xp += xpGanho;
         calculateGrow(this.xp); 
     }
@@ -49,11 +49,11 @@ public abstract class Pet implements Animal, Serializable {
         this.petLevel = petLevel;
     }
 
-    public int getXp() {
+    public double getXp() {
         return xp;
     }
 
-    public void setXp(int xp) {
+    public void setXp(double xp) {
         this.xp = xp;
     }
 }

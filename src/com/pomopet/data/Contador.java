@@ -33,7 +33,7 @@ public class Contador {
         });
         timer.start();
     */
-    
+    //tudo em milissegundo viu (tempo total e restante)
     private int tempoTotal;
     private int tempoRestante;
     private int segundos = 0, minutos=0, horas=0;

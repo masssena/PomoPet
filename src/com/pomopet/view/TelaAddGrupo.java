@@ -3,6 +3,7 @@ package com.pomopet.view;
 import com.pomopet.data.User;
 import com.pomopet.data.GerenciadorUsuario;
 import com.pomopet.data.Grupo;
+import com.pomopet.data.Meta;
 import com.pomopet.data.SaveService;
 import java.util.List;
 import java.util.ArrayList;
@@ -10,11 +11,13 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 public class TelaAddGrupo extends javax.swing.JFrame {
+    Meta meta = new Meta();
 
     private final DefaultListModel<String> membrosModel; //modelo pra lista
     private final TelaGrupos telaPrincipal; // variável que armazena a tela anterior
     private GerenciadorUsuario dadosUsuario = GerenciadorUsuario.getInstance();
     private List<User> todosAmigos = dadosUsuario.getUsuarioLogado().getFriendList();
+    private TelaPrincipal tP;
     
     public TelaAddGrupo(TelaGrupos parent) {
         initComponents();
@@ -105,6 +108,11 @@ public class TelaAddGrupo extends javax.swing.JFrame {
         txtNomeGrupo.setMaximumSize(new java.awt.Dimension(100, 2147483647));
         txtNomeGrupo.setMinimumSize(new java.awt.Dimension(100, 22));
         txtNomeGrupo.setPreferredSize(new java.awt.Dimension(100, 22));
+        txtNomeGrupo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeGrupoActionPerformed(evt);
+            }
+        });
         Form.add(txtNomeGrupo);
 
         jLabel3.setText("Meta (minutos/dia) :");
@@ -122,6 +130,11 @@ public class TelaAddGrupo extends javax.swing.JFrame {
 
         friendListComboBox.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         friendListComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        friendListComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                friendListComboBoxActionPerformed(evt);
+            }
+        });
         Form.add(friendListComboBox);
 
         Main.add(Form);
@@ -200,7 +213,6 @@ public class TelaAddGrupo extends javax.swing.JFrame {
 
     private void CreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateActionPerformed
     String nome = txtNomeGrupo.getText();
-    int meta;
 
     // Validações ->
     if (nome.trim().isEmpty()) {
@@ -209,8 +221,8 @@ public class TelaAddGrupo extends javax.swing.JFrame {
     }
     
     try {
-        meta = Integer.parseInt(txtMetaTempo.getText());
-        if (meta <= 0) {
+        meta.setTempoTotal(Integer.parseInt((txtMetaTempo.getText()))*60);
+        if (meta.getTempoTotal()<=0) {
             JOptionPane.showMessageDialog(this, "A meta deve ser um número positivo.", "Erro de Validação", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -241,7 +253,7 @@ public class TelaAddGrupo extends javax.swing.JFrame {
         }
     }
     
-    Grupo novoGrupo = new Grupo(nome, meta, membrosDoGrupoList);
+    Grupo novoGrupo = new Grupo(nome, meta.getTempoTotal(), membrosDoGrupoList);
     for (User membro : membrosDoGrupoList) {
         membro.addGroup(novoGrupo);
     }
@@ -271,6 +283,14 @@ public class TelaAddGrupo extends javax.swing.JFrame {
     private void txtMetaTempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMetaTempoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMetaTempoActionPerformed
+
+    private void txtNomeGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeGrupoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeGrupoActionPerformed
+
+    private void friendListComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_friendListComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_friendListComboBoxActionPerformed
 
     public static void main(String args[]) {
         
