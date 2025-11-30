@@ -24,6 +24,7 @@ public class TelaPet extends javax.swing.JFrame {
     public void atualizarExibicaoPet() {
         // Busca o Pet do usuário logado
         Pet pet = GerenciadorUsuario.getInstance().getUsuarioLogado().getStudentPet();
+        
         if (pet == null) {
             lblStatusPet.setText("Nenhum Pet Escolhido.");
             lblImagemPet.setIcon(null);
@@ -33,7 +34,7 @@ public class TelaPet extends javax.swing.JFrame {
         }
         
         // Define o Status (Nome e XP/Level) ->s
-        lblStatusPet.setText(pet.getName() + " - XP Total: " + pet.getXp());
+        lblStatusPet.setText(pet.getName() + " - XP Total: " + String.format("%.2f",pet.getXp()) );
         
         // Cálculo e Atualização da Barra de Progresso ->
         
@@ -100,7 +101,6 @@ public class TelaPet extends javax.swing.JFrame {
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
         btnVoltar = new javax.swing.JButton();
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
-        btnEvoluir = new javax.swing.JButton();
         Footer = new javax.swing.JPanel();
         filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         lblLinkWebsite = new javax.swing.JLabel();
@@ -190,7 +190,7 @@ public class TelaPet extends javax.swing.JFrame {
 
         btnVoltar.setText("Voltar");
         btnVoltar.setAlignmentX(0.5F);
-        btnVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnVoltar.setDefaultCapable(false);
         btnVoltar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnVoltar.setMaximumSize(new java.awt.Dimension(150, 50));
@@ -203,21 +203,6 @@ public class TelaPet extends javax.swing.JFrame {
         });
         ButtonBox.add(btnVoltar);
         ButtonBox.add(filler4);
-
-        btnEvoluir.setText("Evoluir");
-        btnEvoluir.setAlignmentX(0.5F);
-        btnEvoluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEvoluir.setDefaultCapable(false);
-        btnEvoluir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnEvoluir.setMaximumSize(new java.awt.Dimension(150, 50));
-        btnEvoluir.setMinimumSize(new java.awt.Dimension(75, 25));
-        btnEvoluir.setPreferredSize(new java.awt.Dimension(130, 50));
-        btnEvoluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEvoluirActionPerformed(evt);
-            }
-        });
-        ButtonBox.add(btnEvoluir);
 
         pnlPrincipal.add(ButtonBox);
 
@@ -293,12 +278,6 @@ public class TelaPet extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
-    private void btnEvoluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvoluirActionPerformed
-
-        //pet.addXp(100);
-        atualizarExibicaoPet();
-    }//GEN-LAST:event_btnEvoluirActionPerformed
-
     public static void main(String args[]) {
        
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -316,7 +295,6 @@ public class TelaPet extends javax.swing.JFrame {
     private javax.swing.JPanel NomePet;
     private javax.swing.JPanel ProgressBox;
     private javax.swing.JProgressBar barraXp;
-    private javax.swing.JButton btnEvoluir;
     private javax.swing.JButton btnVoltar;
     private javax.swing.Box.Filler filler10;
     private javax.swing.Box.Filler filler11;
