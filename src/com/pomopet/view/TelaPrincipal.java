@@ -533,12 +533,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
             start=false;
             timer.stop();
             ComecarButton.setText("Começar");
+            if (tempoMeta!=0)
+                descontarMeta();
+            labelTimer.setText("00:00:00");
+            count.setTempo(0);
         }
         //O tempo decorrido é salvo antes do timer ser zerado
-        if (tempoMeta!=0)
-            descontarMeta();
-        labelTimer.setText("00:00:00");
-        count.setTempo(0);
+        
     }//GEN-LAST:event_PararButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
