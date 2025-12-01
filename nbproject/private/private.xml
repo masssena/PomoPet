@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/joao%20pedro/OneDrive/Área%20de%20Trabalho/Java/PomoPet/src/com/pomopet/data/GerenciadorUsuario.java</file>
             <file>file:/C:/Users/joao%20pedro/OneDrive/Área%20de%20Trabalho/Java/PomoPet/src/com/pomopet/data/User.java</file>
             <file>file:/C:/Users/joao%20pedro/OneDrive/Área%20de%20Trabalho/Java/PomoPet/src/com/pomopet/view/TelaAmigos.java</file>
@@ -11,6 +12,14 @@
             <file>file:/C:/Users/joao%20pedro/OneDrive/Área%20de%20Trabalho/Java/PomoPet/src/com/pomopet/view/TelaEscolherPet.java</file>
             <file>file:/C:/Users/joao%20pedro/OneDrive/Área%20de%20Trabalho/Java/PomoPet/src/com/pomopet/data/Pet.java</file>
             <file>file:/C:/Users/joao%20pedro/OneDrive/Área%20de%20Trabalho/Java/PomoPet/src/com/pomopet/data/Contador.java</file>
+=======
+            <file>file:/C:/Users/massena/Documents/NetBeansProjects/PomoPet/src/com/pomopet/view/TelaPet.java</file>
+            <file>file:/C:/Users/massena/Documents/NetBeansProjects/PomoPet/src/com/pomopet/view/TelaPrincipal.java</file>
+            <file>file:/C:/Users/massena/Documents/NetBeansProjects/PomoPet/src/com/pomopet/data/SaveService.java</file>
+            <file>file:/C:/Users/massena/Documents/NetBeansProjects/PomoPet/src/com/pomopet/data/User.java</file>
+            <file>file:/C:/Users/massena/Documents/NetBeansProjects/PomoPet/src/com/pomopet/view/TelaLogin.java</file>
+            <file>file:/C:/Users/massena/Documents/NetBeansProjects/PomoPet/src/com/pomopet/data/GerenciadorUsuario.java</file>
+>>>>>>> 97e09b4ab55c728aafef4a948cf454eb1251cd9f
         </group>
     </open-files>
 </project-private>
